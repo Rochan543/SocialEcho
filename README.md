@@ -1,12 +1,16 @@
+Here is the content properly formatted for a `README.md` file on GitHub:
+
+---
+
+````markdown
 # SocialEcho
 
-A social networking platform with automated content moderation and context-based authentication system.
+**A social networking platform with automated content moderation and context-based authentication system.**  
+[🎥 Watch Demo](https://youtu.be/Tmncayg7FeU)
 
-[Watch Demo](https://youtu.be/Tmncayg7FeU)
+---
 
-![UI-community](https://raw.githubusercontent.com/nz-m/SocialEcho/main/resources/UI-community.png)
-
-## Table of Contents
+## 📚 Table of Contents
 
 - [Project Overview](#project-overview)
 - [Features](#features)
@@ -16,167 +20,188 @@ A social networking platform with automated content moderation and context-based
 - [Usage](#usage)
 - [License](#license)
 
-## Project Overview
+---
 
-The project is a social networking platform built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It incorporates two major features: an automated content moderation system and context-based authentication. These features are accompanied by common functionalities found in social media applications, such as profile creation, post creation and sharing, liking and commenting on posts, and following/unfollowing users.
+## 🧩 Project Overview
 
-### Automated Content Moderation
+SocialEcho is a full-stack social networking platform built using the **MERN (MongoDB, Express.js, React.js, Node.js)** stack. It includes advanced features such as:
 
-The platform's automated content moderation system utilizes various NLP (Natural Language Processing) APIs. These APIs include:
+- **Automated Content Moderation** using NLP APIs and ML models.
+- **Context-Based Authentication** using IP, device, and location data.
 
-- Perspective API: Used for filtering spam, profanity, toxicity, harassment etc.
-- TextRazor API: Integrated for content categorization.
-- Hugging Face Interface API: Utilized with BART Large MNLI for content categorization.
+Other core social media features include:
 
-A Flask application has been developed to provide similar functionality as the Hugging Face Interface API's classifier. The Flask app utilizes the BART Large MNLI model. It operates as a zero-shot classification pipeline with a PyTorch framework.
+- Profile creation  
+- Post creation and sharing  
+- Liking and commenting  
+- Following/unfollowing users  
 
-The system allows flexibility in choosing different services for API usage or disabling them without affecting overall functionality by using a common interface for interacting with the APIs.
+---
 
-When a user posts content, it undergoes a thorough filtering process to ensure compliance with the community guidelines. Additionally, users have the ability to report posts that they find inappropriate, which triggers a manual review process.
+### 🛡 Automated Content Moderation
 
-### Context-Based Authentication
+The platform uses a combination of NLP APIs and ML models for content moderation:
 
-The platform implements context-based authentication to enhance user account security. It takes into consideration user location, IP address, and device information for authentication purposes. Users can conveniently manage their devices directly from the platform. To ensure data privacy, this information is encrypted using the AES algorithm and securely stored in the database.
+- **Perspective API** – Filters spam, profanity, toxicity, harassment, etc.  
+- **TextRazor API** – Provides content categorization.  
+- **Hugging Face Interface API** – Uses BART Large MNLI model for classification.  
+- **Flask Classifier** – A custom Flask server using PyTorch and BART Large MNLI for zero-shot classification.
 
-In case of a suspicious login attempt, users are promptly notified via email and are required to confirm their identity to protect against unauthorized access.
+A common interface handles API interactions, allowing you to switch services or disable them flexibly.
 
-### User Roles
+> Posts are filtered during submission. Users can also report inappropriate posts for manual moderation.
 
-There are three distinct user roles within the system:
+---
 
-1. Admin: The admin role manages the overall system, including moderator management, community management, content moderation, monitoring user activity, and more.
-2. Moderators: Moderators manage communities, manually review reported posts, and perform other moderation-related tasks.
-3. General Users: General users have the ability to make posts, like comments, and perform other actions within the platform.
+### 🔐 Context-Based Authentication
 
+Enhances account security by verifying:
 
+- IP Address  
+- Location  
+- Device Information  
 
-## Features
+The data is AES-encrypted and stored securely. Suspicious login attempts trigger email notifications, prompting identity verification.
 
-- [x] User authentication and authorization (JWT)
-- [x] User profile creation and management
-- [x] Post creation and management
-- [x] Commenting on posts
-- [x] Liking posts and comments
-- [x] Following/unfollowing users
-- [x] Reporting posts
-- [x] Content moderation
-- [x] Context-based authentication
-- [x] Device management
-- [x] Admin dashboard
-- [x] Moderator dashboard
-- [x] Email notifications
+---
 
+### 👥 User Roles
 
-## Technologies
+- **Admin**: Manages moderators, communities, user activity, and API configurations.
+- **Moderators**: Review reported posts and manage assigned communities.
+- **General Users**: Can create posts, like/comment, follow users, and report content.
 
-- React.js
-- Redux
-- Node.js
-- Express.js
-- MongoDB
-- Tailwind CSS
-- JWT Authentication
-- Passport.js
-- Nodemailer
-- Crypto-js
-- Azure Blob Storage
-- Flask
-- Hugging Face Transformers
+---
 
+## 🚀 Features
 
-## Schema Diagram
+- ✅ JWT-based authentication and authorization  
+- 🧑‍💼 User profile management  
+- 📝 Post creation, commenting, and liking  
+- 🔁 Follow/unfollow users  
+- 🚩 Report and review content  
+- 🔒 Context-based authentication and device management  
+- 📊 Admin and Moderator dashboards  
+- 📧 Email alerts for suspicious activity  
+- 🌐 Content moderation with multiple API support  
 
-![Schema Diagram](https://raw.githubusercontent.com/nz-m/SocialEcho/main/resources/Schema-Diagram.png)
+---
 
+## 🧰 Technologies
 
+- **Frontend**: React.js, Redux, Tailwind CSS  
+- **Backend**: Node.js, Express.js  
+- **Database**: MongoDB  
+- **Authentication**: JWT, Passport.js  
+- **Email Services**: Nodemailer  
+- **Encryption**: Crypto-js (AES)  
+- **Content Moderation**:  
+  - Perspective API  
+  - TextRazor API  
+  - Hugging Face (BART Large MNLI)  
+  - Flask-based Zero-Shot Classifier  
+- **Cloud Storage**: Azure Blob Storage  
 
-## Getting Started
+---
 
-### Prerequisites
+## 🗂 Schema Diagram
 
-Before running the application, make sure you have the following installed:
+📌 _Add your schema diagram image or embed a link here._
 
-- Node.js
-- MongoDB or MongoDB Atlas account
+---
 
-### Installation
+## 🛠 Getting Started
 
-1. Clone the repository
+### ✅ Prerequisites
+
+- Node.js  
+- MongoDB (or MongoDB Atlas account)
+
+### 🔧 Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/nz-m/SocialEcho.git
-```
-2. Go to the project directory and install dependencies for both the client and server
 
-```bash
+# Client setup
 cd client
 npm install
-```
 
-```bash
-cd server
+# Server setup
+cd ../server
 npm install
-```
+````
 
-3. Create a `.env` file in both the `client` and `server` directories and add the environment variables as shown in the `.env.example` files.
-4. Start the server
+### ⚙️ Environment Configuration
+
+Create a `.env` file in both `/client` and `/server` directories using `.env.example` as a reference.
+
+### ▶️ Start the Application
 
 ```bash
+# Start the server
 cd server
 npm start
-```
 
-5. Start the client
-
-```bash
+# In a new terminal, start the client
 cd client
 npm start
 ```
 
+### 🧰 Admin Setup
 
-### Configuration
+Run the following script from the `server` directory to initialize admin and community setup:
 
-Run the `admin_tool.sh` script from the server directory with permissions for executing the script. This script is used for configuring the admin account, creating the initial communities, and other settings.
 ```bash
 ./admin_tool.sh
-``` 
+```
 
-#### `.env` Variables
 
-For email service of context-based authentication, the following variables are required:
+## 🔐 .env Variables
 
-```bash
+### 📧 For Email Service (Context-Based Authentication)
+
+```env
 EMAIL=
 PASSWORD=
 EMAIL_SERVICE=
 ```
 
-For content moderation, you need the `PERSPECTIVE_API_KEY` and either the `INTERFACE_API_KEY` or `TEXTRAZOR_API_KEY`. Visit the following links to obtain the API keys:
+### 🔍 For Content Moderation APIs
 
-- [Perspective API](https://developers.perspectiveapi.com/s/docs-get-started)
-- [TextRazor API](https://www.textrazor.com/)
-- [Hugging Face Interface API](https://huggingface.co/facebook/bart-large-mnli)
+```env
+PERSPECTIVE_API_KEY=
+INTERFACE_API_KEY=
+TEXTRAZOR_API_KEY=
+```
 
-If you prefer, the Flask server can be run locally as an alternative to using the Hugging Face Interface API or TextRazor API. Refer to the `classifier_server` directory for more information.
+* [Perspective API](https://www.perspectiveapi.com)
+* [TextRazor API](https://www.textrazor.com)
+* [Hugging Face API](https://huggingface.co)
 
+> *You can run the Flask-based classifier locally instead of using Hugging Face or TextRazor APIs. Check the `classifier_server` directory.*
 
->**Note:** Configuration for context-based authentication and content moderation features are **_not mandatory_** to run the application. However, these features will not be available if the configuration is not provided.
+📝 Note: These features are optional. The platform will still run without them, but moderation and context-auth features will be disabled.
 
+---
 
-## Usage
+## 👨‍💻 Usage
 
-### Admin
+### 🛡 Admin Dashboard
 
-The admin dashboard can be accessed at the `/admin` route. Use the `admin_tool.sh` script to configure the admin account. The admin account can be used to manage moderators, communities, and perform other admin-related tasks. You can also enable/disable or switch API services using the admin dashboard.
+* Accessible at `/admin`
+* Use `admin_tool.sh` to configure account
+* Manage moderators, communities, API settings
 
-### Moderator
+### 🧑‍⚖️ Moderator Role
 
-Moderators have specific email domain (`@mod.socialecho.com`). When registering with an email from this domain, the user is automatically assigned the moderator role. Moderators can be assigned to different communities from the admin dashboard.
+* Emails ending with `@mod.socialecho.com` are auto-assigned as moderators.
+* Admin can assign communities to moderators.
 
-#### Demo
-https://youtu.be/Tmncayg7FeU
+---
 
-## License
-
-This project is licensed under the [MIT License](https://github.com/nz-m/SocialEcho/blob/main/LICENSE).
+![WhatsApp Image 2025-06-14 at 16 20 49_24e2442e](https://github.com/user-attachments/assets/faeeefa2-f9cf-4561-b5e6-53f7113e3bb1)
+![WhatsApp Image 2025-06-14 at 15 54 40_92381d28](https://github.com/user-attachments/assets/1a70b84e-7a56-411a-9451-c83d7e0aaef7)
+![WhatsApp Image 2025-06-14 at 15 40 19_d75068c9](https://github.com/user-attachments/assets/696d7da6-5697-404a-a054-735b2ca31132)
+![WhatsApp Image 2025-06-14 at 16 30 11_3c649e00](https://github.com/user-attachments/assets/41ad7e47-5058-4198-95f5-edcca6063d87)
 
